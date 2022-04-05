@@ -117,3 +117,5 @@ MonoBehaviour:
   x_pos: 23.41
   y_pos: 1.5
   z_pos: -69.3
+  Spawner: {fileID: 2121945998412747952, guid: 7e371919be0aff646b3650d3c3c3b758, type: 3}
+  Wall: {fileID: 1705465855675578689, guid: 3a2bfbd307c8cca4dba38a2e1b095517, type: 3}

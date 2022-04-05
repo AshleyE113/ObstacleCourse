@@ -6,12 +6,12 @@ using UnityEngine;
 
 public class LogScript : MonoBehaviour
 {
-    public float start_val;
-    public float end_val;
-    public float inter_point;
-    public float x_pos;
-    public float y_pos;
-    public float z_pos;
+    [SerializeField] float start_val;
+    [SerializeField] float end_val;
+    [SerializeField] float inter_point;
+    [SerializeField] float x_pos;
+    [SerializeField] float y_pos;
+    [SerializeField] float z_pos;
 
     void Update()
     {
@@ -27,4 +27,15 @@ public class LogScript : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    /*Spare Code:
+     * [SerializeField] GameObject Spawner;
+    [SerializeField] GameObject Wall;
+
+    void Update()
+    {
+        //Allows the log to lerp from one position to the other over a certain amount of time!
+        transform.position = new Vector3(Mathf.Lerp(Spawner.transform.position.x, Wall.transform.position.x, inter_point), Spawner.transform.position.y, Spawner.transform.position.y);
+        inter_point += (0.5f * Time.deltaTime); //Allows it to happen over tme, can't be 0 or 1!
+    }*/
 }
