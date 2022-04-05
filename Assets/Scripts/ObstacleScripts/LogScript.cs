@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*This class makes the logs lerp between two points and disappear once it hits an invisble wall.*/
+
 public class LogScript : MonoBehaviour
 {
     public float start_val;
@@ -19,8 +21,8 @@ public class LogScript : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other)
-    { //Destroys the log once it hits an invisible wall!
-        if (other.tag == "Wall")
+    { 
+        if (other.tag == "Wall") //Destroys the log once it hits an invisible wall!
         {
             Destroy(gameObject);
         }

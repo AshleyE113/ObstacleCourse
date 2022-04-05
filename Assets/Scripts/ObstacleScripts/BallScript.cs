@@ -15,16 +15,15 @@ public class BallScript : MonoBehaviour
         pos = transform.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
         pos -= (transform.forward * dir_control) * Time.deltaTime * moveSpeed; //Allows the ball to move at a certain direction at a certain speed if it's a pos or neg number!
-        transform.position = pos + transform.right * Mathf.Sin(Time.time * freq) * mag; //Gives that bouncing effect over time!
+        transform.position = pos + transform.right * Mathf.Sin(Time.time * freq) * mag; //Gives that bouncing effect over time! It is transform.right so it can move up on the Y axis
     }
 
     void OnTriggerEnter(Collider other)
-    { //Destroys the ball once it hits an invisible wall!
-        if (other.tag == "Wall")
+    {
+        if (other.tag == "Wall")//Destroys the ball once it hits an invisible wall!
         {
             Destroy(gameObject);
         }

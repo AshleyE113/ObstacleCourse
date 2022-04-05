@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*This class allows the three ramps at the beginning to lerp between two colors and makes only ONE of them solid while the player
+ can fall through the other two.*/
+
 public class RampScript : MonoBehaviour
 {
     Color lerpColor = Color.blue;
@@ -12,7 +15,6 @@ public class RampScript : MonoBehaviour
     
     [SerializeField] float lerpTime;
 
-    // Start is called before the first frame update
     void Start()
     {
         Dramp_renderer = disappearingRamp1.GetComponent<MeshRenderer>();
@@ -23,8 +25,7 @@ public class RampScript : MonoBehaviour
         Rramp_renderer.material.color = Color.blue;
     }
 
-    // Update is called once per frame
-    void Update()
+    void Update() //Allows all of them to lerp.
     {
         Dramp_renderer.material.color = Color.Lerp(Color.blue, Color.magenta, Mathf.PingPong(Time.time, lerpTime));
         Dramp_renderer2.material.color = Color.Lerp(Color.blue, Color.magenta, Mathf.PingPong(Time.time, lerpTime));
@@ -35,7 +36,7 @@ public class RampScript : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            col.gameObject.SetActive(false); //Makes the incorrect ramps disappear
+            col.gameObject.SetActive(false); //Makes the player fall if they choose the wrong ramp
         }
     }
 }

@@ -2,25 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*This class spawns some of the obstacles (logs and leaves) in the level over a certain amount of time. */
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] GameObject log;
+    [SerializeField] GameObject prefab;
     [SerializeField] float wfsVal = 1f;
     [SerializeField] GameObject spawner;
     bool isSpawning = true;
 
-    // Start is called before the first frame update
     void Start()
     {
-        //spawner = GameObject.Find("Spawner");
-        StartCoroutine(SpawnLogs());
+        StartCoroutine(SpawnItems());
     }
 
-    IEnumerator SpawnLogs()
+    IEnumerator SpawnItems()
     {
-        while (isSpawning)
+        while (isSpawning) //continuosly spawns items as the game runs.
         {
-            Instantiate(log, new Vector3(spawner.transform.position.x, spawner.transform.position.y, spawner.transform.position.z), Quaternion.Euler(0, 90, 90));
+            Instantiate(prefab, new Vector3(spawner.transform.position.x, spawner.transform.position.y, spawner.transform.position.z), Quaternion.Euler(0, 90, 90));
             yield return new WaitForSeconds(wfsVal);
         }
     }

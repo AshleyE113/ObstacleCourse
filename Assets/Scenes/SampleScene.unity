@@ -1405,7 +1405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50c8239426c9a1c4b9ab16ff3adb0fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: {fileID: 2537019482715235346, guid: bcb31ff810ae1f64fac37f265135302f, type: 3}
+  prefab: {fileID: 2537019482715235346, guid: bcb31ff810ae1f64fac37f265135302f, type: 3}
   wfsVal: 2
   spawner: {fileID: 963528398}
 --- !u!65 &963528400
@@ -1518,7 +1518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50c8239426c9a1c4b9ab16ff3adb0fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: {fileID: 5612481582428444951, guid: 1cf4852fac49b3448852bbe1094b8e9f, type: 3}
+  prefab: {fileID: 5612481582428444951, guid: 1cf4852fac49b3448852bbe1094b8e9f, type: 3}
   wfsVal: 2
   spawner: {fileID: 973993181}
 --- !u!65 &973993183
@@ -2592,7 +2592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50c8239426c9a1c4b9ab16ff3adb0fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: {fileID: 5612481582428444951, guid: 1fab2caeeb228194a8318edd4cc78eb0, type: 3}
+  prefab: {fileID: 5612481582428444951, guid: 1fab2caeeb228194a8318edd4cc78eb0, type: 3}
   wfsVal: 5
   spawner: {fileID: 1900874275}
 --- !u!65 &1900874277

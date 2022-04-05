@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*This allows the platform that rings you to the last part of the course to move up and down! This was possible thanks to a number of Unity forum posts,
+ especially this one: https://forum.unity.com/threads/making-a-platform-rise-and-fall.37540/ */
 public class UpwardPlatform : MonoBehaviour
 {
     Vector3 velocity;
@@ -17,7 +19,7 @@ public class UpwardPlatform : MonoBehaviour
     private void Start()
     {
         firstPos = transform.position;
-        SecPos = transform.position + new Vector3(0, height, 0);
+        SecPos = transform.position + new Vector3(0, height, 0); //the highest he platform will go
         rb = GetComponent<Rigidbody>();
 
         if (!goingUp)
@@ -38,7 +40,7 @@ public class UpwardPlatform : MonoBehaviour
                 if (rb.position.y > SecPos.y)
                 {
                     goingUp = false;
-                    yield return new WaitForSeconds(duration);
+                    yield return new WaitForSeconds(duration); //Keeps the platform here for a certain amoutn of time
                 }
             }
             else
@@ -54,19 +56,5 @@ public class UpwardPlatform : MonoBehaviour
             yield return null;
             
         }
-    }
-
-    private void OnCollisionEnter(Collision col)
-    {
-        if (col.gameObject.tag == "Player")
-        {
-            isMoving = true;
-            //col.collider.transform.SetParent(transform); //makes the player's transform, the obj's
-        }
-    }
-
-    private void OnCollisionExit(Collision col)
-    {
-        //col.collider.transform.SetParent(null); //makes the player's transform, the obj's
     }
 }

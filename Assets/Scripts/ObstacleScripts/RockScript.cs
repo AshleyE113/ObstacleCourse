@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*This class is made for a specific rock in the rock line. While it lerps the same colors that the rocks do, it does it
+ at a different rate than the others so the player can notice it!*/
+
 public class RockScript : MonoBehaviour
 {
     MeshRenderer rRockColor;
@@ -22,6 +25,6 @@ public class RockScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
-            rightRock.SetActive(false);
+            rightRock.SetActive(false); //Allows the player to move through it once they touch it
     }
 }
