@@ -41,8 +41,9 @@ public class CarController : MonoBehaviour
     }
     public void GetInput()
     {
-        horizInput = Input.GetAxis("Horizontal");
-        VertInput = Input.GetAxis("Vertical") * -1; //To fix an inversion error
+        horizInput = Input.GetAxisRaw("Horizontal");
+        VertInput = Input.GetAxisRaw("Vertical") * -1; //To fix an inversion error
+
     }
     void Steer() //handles the steering for the car
     {
@@ -78,6 +79,15 @@ public class CarController : MonoBehaviour
         GetInput();
         Steer();
         Acceleration();
+
+        /*if (Input.GetAxisRaw("Horizontal") == 0)
+        {
+            GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+        }
+        if (Input.GetAxisRaw("Vertical") * -1 == 0)
+        {
+            GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+        }*/
     }
 
     void Update()

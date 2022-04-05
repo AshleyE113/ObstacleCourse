@@ -9,14 +9,11 @@ public class LogScript : MonoBehaviour
     [SerializeField] float start_val;
     [SerializeField] float end_val;
     [SerializeField] float inter_point;
-    [SerializeField] float x_pos;
-    [SerializeField] float y_pos;
-    [SerializeField] float z_pos;
 
     void Update()
     {
         //Allows the log to lerp from one position to the other over a certain amount of time!
-        transform.position = new Vector3(Mathf.Lerp(start_val, end_val, inter_point), y_pos, z_pos);
+        transform.position = new Vector3(Mathf.Lerp(start_val, end_val, inter_point), transform.position.y, transform.position.z);
         inter_point += (0.5f * Time.deltaTime); //Allows it to happen over tme, can't be 0 or 1!
     }
 
@@ -27,15 +24,4 @@ public class LogScript : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    /*Spare Code:
-     * [SerializeField] GameObject Spawner;
-    [SerializeField] GameObject Wall;
-
-    void Update()
-    {
-        //Allows the log to lerp from one position to the other over a certain amount of time!
-        transform.position = new Vector3(Mathf.Lerp(Spawner.transform.position.x, Wall.transform.position.x, inter_point), Spawner.transform.position.y, Spawner.transform.position.y);
-        inter_point += (0.5f * Time.deltaTime); //Allows it to happen over tme, can't be 0 or 1!
-    }*/
 }
